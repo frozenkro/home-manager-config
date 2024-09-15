@@ -46,6 +46,21 @@ in
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink ./nvim;
     };
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./hypr;
+    };
+    ".config/waybar" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./waybar;
+    };
+    ".oh-my-zsh" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.oh-my-zsh;
+    };
+    ".p10k.zsh" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.p10k.zsh;
+    };
+    ".zshrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
+    };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -81,22 +96,23 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
   programs.wofi.enable = true;
-  programs.zsh = {
-    enable = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
-      buildHm = "home-manager switch";
-    };
-    oh-my-zsh = {
-      enable = true;
-      theme = "robbyrussell";
-      plugins = [
-        "git"
-        "vi-mode"
-      ];
-    };
-  };
+  # programs.zsh = {
+  #   enable = true;
+  #   autosuggestion.enable = true;
+  #   syntaxHighlighting.enable = true;
+  #   shellAliases = {
+  #     buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
+  #     buildHm = "home-manager switch";
+  #   };
+  #   oh-my-zsh = {
+  #     enable = true;
+  #     theme = "robbyrussell";
+  #     plugins = [
+  #       "git"
+  #       "vi-mode"
+  #     ];
+  #   };
+  # };
 }
