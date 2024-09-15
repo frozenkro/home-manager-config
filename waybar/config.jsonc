@@ -1,0 +1,155 @@
+{
+    //"layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["custom/gpu-usage", "cpu", "memory", "pulseaudio", "network", "battery", "custom/weather", "clock", "tray"],
+
+    "idle_inhibitor": {
+        "format": "<span>{icon}  </span>",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+    "clock": {
+        "timezone": "America/Chicago",
+        "format": "{:%H:%M} ",
+        "format-alt": "{:%a, %b %d %C%y} ",
+        "tooltip": false,
+        "on-click-right": "gsimplecal"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "kitty -e bash -ci htop --sort-key PERCENT_CPU"
+    },
+
+    "memory": {
+        "format": "{}% ",
+        "on-click": "kitty -e bash -ci htop --sort-key PERCENT_MEM"
+    },
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C <span>{icon}  </span>",
+        "format": "{temperatureC}°C <span>{icon}  </span>",
+        "format-icons": ["", "", ""]
+    },
+
+    // "backlight": {
+    //     // "device": "acpi_video1",
+    //     "format": "{percent}% {icon}",
+    //     "format-icons": ["", ""]
+    // },
+
+ "battery": {
+        "format": "<span>{icon}  </span> {capacity}% - {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-charging": " <span>{icon}  </span> {capacity}% - {time}",
+        "format-full": " <span>{icon}  </span>",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "2"
+    },
+
+    // % calculated based on (!!) design capacity:
+    // upower -i /org/freedesktop/UPower/devices/battery_BAT0
+    "custom/bat0": {
+        "states": {
+            "good": 95,
+            "warning": 15,
+            "critical": 10
+        },
+        "exec": "~/.config/waybar/modules/battery.py BAT0",
+        // todo: exec-if not working script gets restarted when reloading sway
+        // "exec-if": "[ $(pgrep battery.py | wc -l) -lt 1 ]",
+        "return-type": "json",
+        "format": "{} {percentage}% <span>{icon}  </span>",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+        "on-click-right": "kitty --start-as normal bash -i bat",
+    },
+
+    "network": {
+        "interface": "wlan0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click-right": "kitty --start-as normal bash -ci iwctl",
+        //"on-click": "kitty --start-as normal bash -ci what",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "custom/vpn":{
+        "format": "vpn <span>{icon}  </span>",
+        "tooltip-format": "<span>{icon}  </span>",
+        "exec": "~/.config/waybar/modules/vpn",
+        "return-type": "json",
+        "interval": 5,
+        "format-icons": ["",""]
+    },
+
+    "pulseaudio": {
+        "tooltip": false,
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% <span>{icon}</span>",
+        "format-bluetooth": "{volume}% <span>{icon}  </span>  {format_source}",
+        "format-bluetooth-muted": " <span>{icon}  </span>  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol",
+        "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "custom/kbd": {
+        "format": "{}",
+        //"format-alt": "{alt}: {}",
+        //"format-alt-click": "click-left",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/modules/kbd_indicator"
+    },
+
+    "custom/gpu-usage": {
+      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+      "format": "{}% ",
+      "return-type": "",
+      "interval": 1
+    },
+
+		"bluetooth": {
+			"format": "<span>{icon}  </span>",
+			"format-alt": "bluetooth: {status}",
+			"interval": 30,
+			"format-icons": {
+				"enabled": "",
+				"disabled": ""
+			},
+			"tooltip-format": "{status}"
+		}
+
+}
