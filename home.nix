@@ -41,7 +41,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink ../config/nvim;
+      source = config.lib.file.mkOutOfStoreSymlink ./nvim;
     };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
