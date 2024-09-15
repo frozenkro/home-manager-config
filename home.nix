@@ -52,15 +52,18 @@ in
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink ./waybar;
     };
-    ".oh-my-zsh" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.oh-my-zsh;
-    };
+    # ".oh-my-zsh" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.oh-my-zsh;
+    # };
     ".p10k.zsh" = {
       source = config.lib.file.mkOutOfStoreSymlink ./zsh/.p10k.zsh;
     };
-    ".zshrc" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
-    };
+    # ".zshrc" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
+    # };
+    # ".dir_colors" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.dir_colors;
+    # };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -98,21 +101,44 @@ in
   programs.home-manager.enable = true;
 
   programs.wofi.enable = true;
-  # programs.zsh = {
-  #   enable = true;
-  #   autosuggestion.enable = true;
-  #   syntaxHighlighting.enable = true;
-  #   shellAliases = {
-  #     buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
-  #     buildHm = "home-manager switch";
-  #   };
-  #   oh-my-zsh = {
-  #     enable = true;
-  #     theme = "robbyrussell";
-  #     plugins = [
-  #       "git"
-  #       "vi-mode"
-  #     ];
-  #   };
-  # };
+  programs.zsh = {
+    enable = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    shellAliases = {
+      buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
+      buildHm = "home-manager switch";
+    };
+    oh-my-zsh = {
+      enable = true;
+      theme = "powerlevel10k/powerlevel10k";
+      plugins = [
+        "git"
+        "vi-mode"
+        "docker"
+      ];
+    };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      # {
+      #   name = "powerlevel10k-config";
+      #   src = ./zsh;
+      #   file = "p10k.zsh";
+      # }
+    ];
+
+    initExtra = ''
+      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+
+      [[ ! -f !/.p10k.zsh ]] || source !/.p10k.zsh
+
+    '';
+  };
 }

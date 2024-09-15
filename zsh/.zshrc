@@ -15,7 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -121,7 +122,7 @@ alias cz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
 eval `dircolors ~/.dir_colors/dircolors`
 prompt_context() {}
-source /home/kaup/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /home/kaup/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export TF_VAR_AWS_CLI_PROFILE=Admin
 export TF_VAR_MOSQUITTO_INST_KEY_NAME=plantmudderpersonal
 export PATH=$PATH:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin
@@ -135,3 +136,6 @@ if [ -e /home/kaup/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kaup/.nix-p
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=/home/kaup/.nix-profile/bin:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin:/home/kaup/go/bin:/home/kaup/bin:/home/kaup/.local/bin
+
+alias buildnix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
+alias buildhm = "home-manager switch"
