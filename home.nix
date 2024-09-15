@@ -83,6 +83,10 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    shellAliases = {
+      buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
+      buildHm = "home-manager switch";
+    };
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
