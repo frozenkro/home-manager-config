@@ -21,7 +21,7 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    pkgs.oh-my-zsh
+    #pkgs.oh-my-zsh
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -52,12 +52,15 @@ in
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink ./waybar;
     };
+    ".config/kitty" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./kitty;
+    };
     # ".oh-my-zsh" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.oh-my-zsh;
     # };
-    ".p10k.zsh" = {
-      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.p10k.zsh;
-    };
+    # ".p10k.zsh" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.p10k.zsh;
+    # };
     # ".zshrc" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
     # };
@@ -101,44 +104,44 @@ in
   programs.home-manager.enable = true;
 
   programs.wofi.enable = true;
-  programs.zsh = {
-    enable = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
-      buildHm = "home-manager switch";
-    };
-    oh-my-zsh = {
-      enable = true;
-      theme = "powerlevel10k/powerlevel10k";
-      plugins = [
-        "git"
-        "vi-mode"
-        "docker"
-      ];
-    };
+  # programs.zsh = {
+  #   enable = true;
+  #   autosuggestion.enable = true;
+  #   syntaxHighlighting.enable = true;
+  #   shellAliases = {
+  #     buildNix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default";
+  #     buildHm = "home-manager switch";
+  #   };
+  #   oh-my-zsh = {
+  #     enable = true;
+  #     theme = "powerlevel10k/powerlevel10k";
+  #     plugins = [
+  #       "git"
+  #       "vi-mode"
+  #       "docker"
+  #     ];
+  #   };
 
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      # {
-      #   name = "powerlevel10k-config";
-      #   src = ./zsh;
-      #   file = "p10k.zsh";
-      # }
-    ];
+  #   plugins = [
+  #     {
+  #       name = "powerlevel10k";
+  #       src = pkgs.zsh-powerlevel10k;
+  #       file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+  #     }
+  #     # {
+  #     #   name = "powerlevel10k-config";
+  #     #   src = ./zsh;
+  #     #   file = "p10k.zsh";
+  #     # }
+  #   ];
 
-    initExtra = ''
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
+  #   initExtra = ''
+  #     if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+  #       source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+  #     fi
 
-      [[ ! -f !/.p10k.zsh ]] || source !/.p10k.zsh
+  #     [[ ! -f !/.p10k.zsh ]] || source !/.p10k.zsh
 
-    '';
-  };
+  #   '';
+  # };
 }
