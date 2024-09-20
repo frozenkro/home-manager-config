@@ -1,8 +1,9 @@
+// env GTK_DEBUG=interactive waybar
 {
     //"layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["custom/gpu-usage", "cpu", "memory", "pulseaudio", "network", "battery", "custom/weather", "clock", "tray"],
+    "modules-right": ["disk", "disk#home", "custom/gpu-usage", "cpu", "memory", "pulseaudio", "network", "battery", "custom/weather", "clock"],
 
     "idle_inhibitor": {
         "format": "<span>{icon}  </span>",
@@ -10,6 +11,18 @@
             "activated": "",
             "deactivated": ""
         }
+    },
+
+    "disk": {
+      "interval": 30,
+      "format":"<span weight=\"bold\">root</span> {specific_free:0.1f}/{specific_total:0.1f}GB",
+      "unit": "GB"
+    },
+    "disk#home": {
+      "path": "/home",
+      "interval": 30,
+      "format":"<span weight=\"bold\">home</span> {specific_free:0.1f}/{specific_total:0.1f}GB",
+      "unit": "GB"
     },
 
     "tray": {
@@ -135,7 +148,7 @@
     },
 
     "custom/gpu-usage": {
-      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+      "exec": "$HOME/.config/waybar/modules/gpu_usage",
       "format": "{}% ",
       "return-type": "",
       "interval": 1
