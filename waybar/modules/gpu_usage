@@ -4,11 +4,11 @@
 # not doing dynamic lookup because this will run 1x/sec.
 # This won't necessarily work on different hardware
 # `cat /sys/class/hwmon/hwmon*/name` to get which hwmonX to point to
-amdDevice="hwmon3"
 
 videoDevice=$(lspci | grep -i "VGA")
-if [[ $videoDevice == *"AMD"* ]]; then
-  cat /sys/class/hwmon/$amdDevice/device/gpu_busy_percent
-elif [[ $videoDevice == *"nvidia"* ]]; then
+if [[ $videoDevice == *"NVIDIA"* ]]; then
   nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
+elif [[ $videoDevice == *"AMD"* ]]; then
+  amdDevice="hwmon3"
+  cat /sys/class/hwmon/$amdDevice/device/gpu_busy_percent
 fi

@@ -2,7 +2,10 @@
 echo help
 echo home: $HOME
 echo 1: $1
-if [ -z '$1' ]; then
+
+if [ -z "$1" ]
+then
+  echo hello
   hd=$HOME
 else 
   hd=$1
