@@ -139,3 +139,4 @@ export PATH=/home/kaup/.nix-profile/bin:/home/kaup/.nvm/versions/node/v18.17.1/b
 
 alias buildnix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
 alias buildhm = "home-manager switch"
+export PATH=/home/kaup/.nix-profile/bin:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin:/home/kaup/go/bin:/home/kaup/bin:/home/kaup/.local/bin:/home/kaup/pack/Hyprland/build/hyprctl:/home/kaup/pack/zig/build/stage3/bin/
