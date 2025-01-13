@@ -52,6 +52,9 @@ in
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink ./waybar;
     };
+    ".config/ghostty" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./ghostty;
+    };
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink ./kitty;
     };
@@ -97,7 +100,7 @@ in
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    TERMINAL = "kitty";
+    TERMINAL = "ghostty";
   };
 
   # Let Home Manager install and manage itself.
