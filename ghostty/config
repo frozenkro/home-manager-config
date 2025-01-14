@@ -56,5 +56,3 @@ keybind = shift+ctrl+j=resize_split:down,50
 keybind = shift+ctrl+k=resize_split:up,50
 keybind = shift+ctrl+l=resize_split:right,50
 keybind = shift+ctrl+w=close_surface
-keybind = ctrl+d=scroll_page_down
-keybind = ctrl+u=scroll_page_up
