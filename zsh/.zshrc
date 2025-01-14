@@ -115,28 +115,21 @@ export NVM_DIR="$HOME/.nvm"
 
 # user defined
 export PICO_SDK_PATH="$HOME/pico/pico-sdk"
-alias picoOCD="/home/kaup/pico/openocd/src/openocd"
+alias picoOCD="$HOME/pico/openocd/src/openocd"
 alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
 alias picoCMake="cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug -B build"
 alias cz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
 eval `dircolors ~/.dir_colors/dircolors`
 prompt_context() {}
-# source /home/kaup/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $HOME/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export TF_VAR_AWS_CLI_PROFILE=Admin
-export TF_VAR_MOSQUITTO_INST_KEY_NAME=plantmudderpersonal
-export PATH=$PATH:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin
-alias signCert=sudo sbsign --key /etc/refind.d/keys/refind_local.key --cert /etc/refind.d/keys/refind_local.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
-alias validateCert=sudo sbverify --cert /etc/refind.d/keys/refind_local.crt /boot/vmlinuz-linux
-export PATH=/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin:/home/kaup/go/bin
-export PATH=/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin:/home/kaup/go/bin:/home/kaup/bin
 
-if [ -e /home/kaup/.nix-profile/etc/profile.d/nix.sh ]; then . /home/kaup/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH=/home/kaup/.nix-profile/bin:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin:/home/kaup/go/bin:/home/kaup/bin:/home/kaup/.local/bin
 
 alias buildnix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
 alias buildhm = "home-manager switch"
-export PATH=/home/kaup/.nix-profile/bin:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/.nvm/versions/node/v18.17.1/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/kaup/pack/nvim-linux64/bin:/home/kaup/go/bin:/home/kaup/bin:/home/kaup/.local/bin:/home/kaup/pack/Hyprland/build/hyprctl:/home/kaup/pack/zig/build/stage3/bin/
+export PATH=$HOME/.nix-profile/bin:$HOME/.nvm/versions/node/v20.10.0/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.nvm/versions/node/v20.10.0/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/
