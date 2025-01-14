@@ -64,9 +64,9 @@ in
     # ".p10k.zsh" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.p10k.zsh;
     # };
-    # ".zshrc" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
-    # };
+    ".zshrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
+    };
     # ".dir_colors" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.dir_colors;
     # };
