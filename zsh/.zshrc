@@ -120,15 +120,14 @@ alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
 alias picoCMake="cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug -B build"
 alias cz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
-prompt_context() {}
 # source $HOME/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export TF_VAR_AWS_CLI_PROFILE=Admin
 
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh ]]
 
-alias buildnix = "nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
-alias buildhm = "home-manager switch"
+alias buildnix="nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
+alias buildhm="home-manager switch"
 export PATH=$HOME/.nix-profile/bin:$HOME/.nvm/versions/node/v20.10.0/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.nvm/versions/node/v20.10.0/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/
