@@ -43,8 +43,8 @@
 # resize-overlay-duration = 4s 200ms
 
 window-decoration = false
-background-opacity = 0.8
-unfocused-split-opacity = 0.69
+background-opacity = 0.90
+unfocused-split-opacity = 0.90
 
 
 keybind = ctrl+h=goto_split:left
