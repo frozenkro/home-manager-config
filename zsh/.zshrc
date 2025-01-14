@@ -120,7 +120,6 @@ alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
 alias picoCMake="cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug -B build"
 alias cz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
-eval `dircolors ~/.dir_colors/dircolors`
 prompt_context() {}
 # source $HOME/pack/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export TF_VAR_AWS_CLI_PROFILE=Admin
