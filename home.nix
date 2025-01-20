@@ -67,6 +67,9 @@ in
     ".zshrc" = {
       source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshrc;
     };
+    ".zshenv" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshenv;
+    };
     # ".dir_colors" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.dir_colors;
     # };
