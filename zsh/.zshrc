@@ -114,6 +114,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # user defined
+export OLLAMA_HOST="192.168.0.42:11434"
 export PICO_SDK_PATH="$HOME/pico/pico-sdk"
 alias picoOCD="$HOME/pico/openocd/src/openocd"
 alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
