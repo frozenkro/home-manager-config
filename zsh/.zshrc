@@ -133,3 +133,4 @@ alias buildnix="nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#defau
 alias buildhm="home-manager switch"
 export PATH=$HOME/.nix-profile/bin:$HOME/.nvm/versions/node/v20.10.0/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.nvm/versions/node/v20.10.0/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/
 alias zigd=~/pack/zig/build/stage3/bin/zig
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/share/lib/pkgconfig
