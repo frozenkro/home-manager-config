@@ -115,8 +115,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # user defined
 export OLLAMA_HOST="192.168.0.42:11434"
-export PICO_SDK_PATH="$HOME/pico/pico-sdk"
-alias picoOCD="$HOME/pico/openocd/src/openocd"
+export PICO_SDK_PATH="$HOME/pack/pico-sdk"
 alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
 alias picoCMake="cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug -B build"
 alias cz="nvim ~/.zshrc"
