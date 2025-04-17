@@ -70,6 +70,9 @@ in
     ".zshenv" = {
       source = config.lib.file.mkOutOfStoreSymlink ./zsh/.zshenv;
     };
+    ".wezterm.lua" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
+    };
     # ".dir_colors" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.dir_colors;
     # };

@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 window-decoration = false
-background-opacity = 0.90
+#background-opacity = 0.90
 unfocused-split-opacity = 0.90
 
 
