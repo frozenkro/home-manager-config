@@ -58,6 +58,9 @@ in
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink ./kitty;
     };
+    ".config/wofi" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./wofi;
+    };
     # ".oh-my-zsh" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.oh-my-zsh;
     # };
