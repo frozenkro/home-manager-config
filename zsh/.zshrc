@@ -135,3 +135,4 @@ alias zigd=~/pack/zig/build/stage3/bin/zig
 alias ls=eza
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/share/lib/pkgconfig:/usr/local/share/pkgconfig
 
+source /usr/share/nvm/init-nvm.sh
