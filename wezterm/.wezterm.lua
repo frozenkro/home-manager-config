@@ -15,6 +15,7 @@ config.dpi = 384.0
 --config.color_scheme = 'Rydgel (terminal.sexy)'
 config.color_scheme = 'tokyonight'
 config.font = wezterm.font 'JetBrains Mono'
+config.font_size = 10.0
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -31,7 +32,7 @@ config.window_frame = {
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 12.0,
+  font_size = 10.0,
 
   -- The overall background color of the tab bar when
   -- the window is focused
