@@ -6,7 +6,14 @@ local config = wezterm.config_builder()
 
 -- if the following issue is resolved, remove this
 -- https://github.com/wezterm/wezterm/issues/7156
-config.dpi = 384.0
+wezterm.on('window-config-reloaded', function(window)
+  if wezterm.gui.screens().active.name == 'eDP-1' then
+    window:set_config_overrides({
+      dpi = 384
+    })
+  end
+end)
+-- config.dpi = 384.0
 
 -- This is where you actually apply your config choices
 
@@ -15,7 +22,7 @@ config.dpi = 384.0
 --config.color_scheme = 'Rydgel (terminal.sexy)'
 config.color_scheme = 'tokyonight'
 config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 10.0
+config.font_size = 11.0
 
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
@@ -32,7 +39,7 @@ config.window_frame = {
 
   -- The size of the font in the tab bar.
   -- Default to 10.0 on Windows but 12.0 on other systems
-  font_size = 10.0,
+  font_size = 11.0,
 
   -- The overall background color of the tab bar when
   -- the window is focused
