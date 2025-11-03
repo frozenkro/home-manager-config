@@ -114,7 +114,6 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # user defined
-export OLLAMA_HOST="192.168.0.42:11434"
 export PICO_SDK_PATH="$HOME/pack/pico-sdk"
 alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
 alias picoCMake="cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug -B build"
@@ -131,8 +130,19 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc
 alias buildnix="nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
 alias buildhm="home-manager switch"
 export PATH=$HOME/.nix-profile/bin:$HOME/.nvm/versions/node/v22.20.0/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.nvm/versions/node/v22.20.0/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/:$HOME/.local/bin/wezterm/release
+
+# zig development build
 alias zigd=~/pack/zig/build/stage3/bin/zig
+
+# prettier drop-in replacement for ls
 alias ls=eza
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/share/lib/pkgconfig:/usr/local/share/pkgconfig
 
-source /usr/share/nvm/init-nvm.sh
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+  source /usr/share/nvm/init-nvm.sh;
+fi
+
+# ollama 
+export LD_LIBRARY_PATH=$HOME/.local/lib/ollama:$LD_LIBRARY_PATH
+export OLLAMA_HOST="192.168.0.42:11434"
+export OLLAMA_MODELS=$HOME/.ollama/models/
