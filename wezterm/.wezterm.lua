@@ -6,13 +6,15 @@ local config = wezterm.config_builder()
 
 -- if the following issue is resolved, remove this
 -- https://github.com/wezterm/wezterm/issues/7156
-wezterm.on('window-config-reloaded', function(window)
-  if wezterm.gui.screens().active.name == 'eDP-1' then
-    window:set_config_overrides({
-      dpi = 384
-    })
-  end
-end)
+-- UPDATE: cautiously removing despite issue still being open
+-- wezterm.on('window-config-reloaded', function(window)
+--   if wezterm.gui.screens().active.name == 'eDP-1' then
+--     window:set_config_overrides({
+--       dpi = 384
+--     })
+--   end
+-- end)
+-- previous fix:
 -- config.dpi = 384.0
 
 -- This is where you actually apply your config choices
@@ -104,7 +106,6 @@ config.colors = {
 }
 
 config.window_background_opacity = 0.99
-
 
 config.keys = {
   {
