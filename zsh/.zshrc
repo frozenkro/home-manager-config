@@ -147,3 +147,6 @@ export LD_LIBRARY_PATH=$HOME/.local/lib/ollama:$LD_LIBRARY_PATH
 export OLLAMA_HOST="192.168.0.42:11434"
 # export OLLAMA_MODELS=$HOME/.ollama/models/
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+if [[ ! "$TERM" =~ tmux ]]; then
+  tmux new -A -s main
+fi
