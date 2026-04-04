@@ -63,6 +63,9 @@ in
     ".wezterm.lua" = {
       source = config.lib.file.mkOutOfStoreSymlink ./wezterm/.wezterm.lua;
     };
+    ".tmux.config" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./tmux/.tmux.config;
+    };
     # ".dir_colors" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.dir_colors;
     # };
