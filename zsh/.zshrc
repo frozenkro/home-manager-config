@@ -154,3 +154,7 @@ fi
 
 # opencode
 export PATH=/home/kaleb/.opencode/bin:$PATH
+
+# hive 
+alias hv='tmux new-session -As hive hive'
+

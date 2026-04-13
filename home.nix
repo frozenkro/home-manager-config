@@ -46,6 +46,9 @@ in
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink ./kitty;
     };
+    ".config/hive" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./hive;
+    };
     ".config/wofi" = {
       source = config.lib.file.mkOutOfStoreSymlink ./wofi;
     };
@@ -66,6 +69,9 @@ in
     };
     ".tmux.conf" = {
       source = config.lib.file.mkOutOfStoreSymlink ./tmux/.tmux.conf;
+    };
+    ".npmrc" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./npm/.npmrc;
     };
     # ".dir_colors" = {
     #   source = config.lib.file.mkOutOfStoreSymlink ./zsh/.dir_colors;
