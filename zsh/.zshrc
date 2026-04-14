@@ -99,18 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # user defined
@@ -129,7 +120,9 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc
 
 alias buildnix="nixos-rebuild switch --flake \"$(readlink -f /etc/nixos)\"#default"
 alias buildhm="home-manager switch"
-export PATH=$HOME/.nix-profile/bin:$HOME/.nvm/versions/node/v22.20.0/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.nvm/versions/node/v22.20.0/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/:$HOME/.local/bin/wezterm/release:$HOME/.npm-packages/bin
+# export PATH=$HOME/.nix-profile/bin:$HOME/.nvm/versions/node/v22.20.0/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.nvm/versions/node/v22.20.0/bin:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/:$HOME/.local/bin/wezterm/release:$HOME/.npm-packages/bin
+export PATH=$HOME/.nix-profile/bin:/opt/miniconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/miniconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/pack/nvim-linux64/bin:$HOME/go/bin:$HOME/bin:$HOME/.local/bin:$HOME/pack/Hyprland/build/hyprctl:$HOME/.local/ghostty/bin/:$HOME/.local/bin/wezterm/release:$HOME/.npm-packages/bin
+# export PATH=$PATH:$HOME/.nvm/versions/node/v22.20.0/bin
 
 # zig development build
 alias zigd=~/pack/zig/build/stage3/bin/zig
@@ -138,9 +131,9 @@ alias zigd=~/pack/zig/build/stage3/bin/zig
 alias ls=eza
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/share/lib/pkgconfig:/usr/local/share/pkgconfig
 
-if [ -f /usr/share/nvm/init-nvm.sh ]; then
-  source /usr/share/nvm/init-nvm.sh;
-fi
+# if [ -f /usr/share/nvm/init-nvm.sh ]; then
+#   source /usr/share/nvm/init-nvm.sh;
+# fi
 
 # ollama 
 export LD_LIBRARY_PATH=$HOME/.local/lib/ollama:$LD_LIBRARY_PATH
