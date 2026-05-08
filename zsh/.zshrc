@@ -145,6 +145,10 @@ if [[ ! "$TERM" =~ tmux ]]; then
   tmux new -A -s main
 fi
 
+if [ -n "$TMUX" ]; then
+  eval "$(tmux show-environment -s)"
+fi
+
 # opencode
 export PATH=/home/kaleb/.opencode/bin:$PATH
 
