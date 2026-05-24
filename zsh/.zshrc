@@ -1,3 +1,4 @@
+#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -105,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # user defined
+export PROMPT_TOOLKIT_EDITING_MODE=vi
 export PICO_SDK_PATH="$HOME/pack/pico-sdk"
 alias picoListen="minicom -b 115200 -o -D /dev/ttyACM0"
 alias picoCMake="cmake -DPICO_BOARD=pico_w -DCMAKE_BUILD_TYPE=Debug -B build"
@@ -138,7 +140,7 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig:/usr/share/lib/
 # ollama 
 export LD_LIBRARY_PATH=$HOME/.local/lib/ollama:$LD_LIBRARY_PATH
 export OLLAMA_HOST="192.168.0.42:11434"
-# export OLLAMA_MODELS=$HOME/.ollama/models/
+export OLLAMA_MODELS=$HOME/.ollama/models/
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 if [[ ! "$TERM" =~ tmux ]]; then
@@ -155,3 +157,8 @@ export PATH=/home/kaleb/.opencode/bin:$PATH
 # hive 
 alias hv='tmux new-session -As hive hive'
 
+hm() {
+  OLLAMA_HOST="" ollama launch hermes
+}
+
+export PROMPT_TOOLKIT_EDITING_MODE=vi
