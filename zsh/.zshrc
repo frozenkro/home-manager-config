@@ -162,3 +162,6 @@ hm() {
 }
 
 export PROMPT_TOOLKIT_EDITING_MODE=vi
+export ANDROID_HOME="$HOME/android-sdk"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+PATH=$PATH:$HOME/.cargo/bin/
