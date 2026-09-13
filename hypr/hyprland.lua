@@ -204,6 +204,10 @@ hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
+-- Move entire workspace to monitor left/right
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.workspace.move({ monitor = "l" }))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.workspace.move({ monitor = "r" }))
+
 -- Move window
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
